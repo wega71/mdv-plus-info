@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="How MDV Plus processes Markdown, clipboard text, settings and optional website access, and how to contact the publisher.">
+  <meta name="referrer" content="no-referrer">
+  <title>Privacy policy — MDV Plus</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav wrap"><a class="brand" href="./"><img src="assets/icon.png" width="36" height="36" alt="">MDV Plus</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="#contact">Privacy contact</a></nav></header>
+  <main id="main" class="wrap policy">
+    <p class="eyebrow">Clear information. No small print.</p>
+    <h1>Privacy policy</h1>
+    <p class="date">Last updated: 17 October 2026 · Applies to MDV Plus 0.2.0 and this project website.</p>
+    <div class="summary"><p>MDV Plus renders Markdown in your browser. The extension has no publisher-operated document upload service, advertising or analytics. Local processing still involves user data: clipboard text, document contents, settings, document URLs and scroll positions. Chrome synchronization and external resource requests are explained below.</p></div>
+    <ol class="toc"><li><a href="#documents">Documents and clipboard</a></li><li><a href="#settings">Settings and Chrome synchronization</a></li><li><a href="#websites">Website access and activity</a></li><li><a href="#external">External resources and recipients</a></li><li><a href="#retention">Retention and your controls</a></li><li><a href="#limited-use">Limited use of data</a></li><li><a href="#hosting">This website and support email</a></li><li><a href="#contact">Contact and changes</a></li></ol>
+
+    <h2 id="documents">1. Documents and clipboard</h2>
+    <p>When you choose to open or paste clipboard text, open a file, or view a permitted Markdown page, MDV Plus processes its content to produce a formatted view. Editing and saving also use document text, the selected file name and, where supported, a browser-provided file handle and file metadata. The publisher does not receive these documents through the extension.</p>
+    <p>The extension reads the clipboard when you invoke a clipboard action; it does not continuously monitor it. Text read in the popup is temporarily placed in the extension’s local storage to hand it to the viewer. The viewer removes that transfer entry when it retrieves it. Entries older than one minute are not loaded as a new document, but this age check is not an automatic deletion timer. An unread entry can remain until it is retrieved, replaced or storage is cleared.</p>
+    <p>The open document is otherwise held in the viewer’s memory, not saved as an automatic document archive by MDV Plus. Changes are written to a chosen file or downloaded when you save. Your operating system, browser and any folder-sync service you use may separately retain files or restore browser sessions.</p>
+
+    <h2 id="settings">2. Settings and Chrome synchronization</h2>
+    <p>MDV Plus uses <code>chrome.storage.sync</code> for preferences, including interface language, theme, parser settings, custom CSS and configured website origins and matching rules. Chrome may transmit and synchronize these settings through Google according to your browser/account settings. Markdown document bodies are not intentionally stored in synchronized settings. Do not put confidential information into custom CSS or website matching rules if you do not want it synchronized.</p>
+    <p>Chrome and Google process browser synchronization under their own terms and <a href="https://policies.google.com/privacy" rel="noreferrer">Google Privacy Policy</a>. The publisher does not operate or control that service.</p>
+
+    <h2 id="websites">3. Website access and activity</h2>
+    <p>To recognize Markdown, MDV Plus checks document URLs and content types where access is permitted. It injects its packaged viewer and supporting code into matching documents. Remote website access is optional and requires a browser permission grant; local-file access also depends on the browser’s file-access setting.</p>
+    <p>Reading positions may be stored locally using the document origin and path as a key, with a local extension-storage fallback if website local storage is unavailable. These entries reveal which documents have saved reading positions, but are not sent to the publisher. They are not a general browsing-history database.</p>
+    <p>The optional automatic-reload feature observes completed document requests and retrieves the open document again to update its view. This can generate additional requests to that document’s server. It is not used to build advertising or behavioral profiles.</p>
+
+    <h2 id="external">4. External resources and recipients</h2>
+    <p>“Rendered in your browser” does not mean that every document is network-free:</p>
+    <ul>
+      <li><strong>Document resources:</strong> external images, links you follow and resources referenced by custom CSS can contact their respective hosts. Those hosts receive the requested resource URL and normal network information, such as your IP address and browser request headers. Referrer information depends on the context and browser rules.</li>
+      <li><strong>Emoji:</strong> if optional emoji rendering is enabled for Markdown pages, emoji images are loaded from <code>cdn.jsdelivr.net/emojione/assets</code>, operated through jsDelivr. The requested image identifies the emoji, and the CDN receives normal request metadata. See <a href="https://www.jsdelivr.com/terms/privacy-policy" rel="noreferrer">jsDelivr’s privacy policy</a>.</li>
+      <li><strong>Permitted document servers:</strong> viewing or automatically reloading remote Markdown contacts its hosting server. The server handles these requests under its own policies.</li>
+      <li><strong>Google:</strong> browser synchronization can process the settings described above. Installation, updates and store interactions are also provided by Google, separately from document rendering.</li>
+    </ul>
+    <p>These requests do not constitute a publisher-operated upload of the complete Markdown document. However, a document may itself contain resource URLs carrying sensitive information. Review untrusted content before displaying it, and disable optional features or use offline/network controls where appropriate. The extension’s executable rendering libraries are packaged with the extension rather than fetched from a remote script service.</p>
+
+    <h2 id="retention">5. Retention and your controls</h2>
+    <ul>
+      <li>Close the viewer to end that document’s active editing session. Closing it does not delete files you saved or guarantee deletion from browser session recovery.</li>
+      <li>Clipboard transfer storage is removed on retrieval as described above. Clear extension storage or uninstall to remove remaining extension-local entries.</li>
+      <li>Preferences and reading-position entries can remain until changed or cleared. Clear relevant website storage to remove reading positions stored there; uninstalling the extension alone does not necessarily clear website storage.</li>
+      <li>Manage synchronized data through Chrome’s synchronization and account controls. Uninstalling on one device does not guarantee immediate deletion of all synchronized copies.</li>
+      <li>Revoke optional website permissions, disable automatic reloading or emoji, and turn off file-URL access in the browser’s extension controls when not needed.</li>
+      <li>Files saved or downloaded remain under your control until you delete them. Their retention also depends on your backups and folder-sync services.</li>
+    </ul>
+
+    <h2 id="limited-use">6. Limited use of data</h2>
+    <p>User data is used only to provide the described Markdown viewing, editing, saving and related settings features. MDV Plus does not sell user data, use it for personalized advertising, or use or transfer it for creditworthiness or lending decisions. The publisher does not receive document content unless you voluntarily provide it, for example in a support email.</p>
+    <p>The use of data accessed through Chrome APIs complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use" rel="noreferrer">Chrome Web Store User Data Policy and Limited Use requirements</a>. Data is not used or transferred for unrelated purposes.</p>
+
+    <h2 id="hosting">7. This website and support email</h2>
+    <p>This static website includes no publisher-added analytics, advertising scripts, embedded third-party media, external fonts or tracking cookies. Its images and styles are served with the site. GitHub Pages hosts the site; GitHub processes technical request information, including IP addresses, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub Privacy Statement</a>. Clicking external links opens the relevant third-party service.</p>
+    <p>If you email <a href="mailto:wegasolutions@googlemail.com">wegasolutions@googlemail.com</a>, your address, message, attachments and normal email metadata are processed to answer the request. The mailbox is provided by Google/Gmail. Support correspondence is kept as needed to address the request and meet applicable obligations; you may request deletion where applicable. Do not send passwords or sensitive documents. Service providers may process data internationally according to their policies.</p>
+
+    <h2 id="contact">8. Contact and changes</h2>
+    <p>For support, privacy questions or requests concerning data you have voluntarily sent to the publisher, contact <a href="mailto:wegasolutions@googlemail.com">wegasolutions@googlemail.com</a>. Depending on applicable law, you may have rights to access, correction, deletion, restriction or objection, portability, and to complain to a supervisory authority. The publisher cannot retrieve documents stored only on your device; requests about Google or GitHub data may also need to be directed to those providers.</p>
+    <p>This policy will be updated when relevant behavior changes. The latest revision date appears at the top of this page.</p>
+  </main>
+  <footer class="wrap footer"><p>MDV Plus — Markdown Viewer</p><a href="index.html">Back to the project</a></footer>
+</body>
+</html>
